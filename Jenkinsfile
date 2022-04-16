@@ -7,19 +7,10 @@ pipeline {
                 bat 'mvn test'
             }
         }
-
-        stage ('Funcional Test Frota') {
-                            steps {
-                                dir('Funcional-test-Frota') {
-                                    git credentialsId: 'github_login', url: 'https://github.com/WellingtonBS/frotaflex-teste1'
-                                    bat 'mvn test'
-                }
-            }
-        }
     }
     post {
         always {
-            junit allowEmptyResults: true, testResults: ''
+            junit allowEmptyResults: true, testResults: 'target/surefire-reports/*.xml'
 
         }
 
