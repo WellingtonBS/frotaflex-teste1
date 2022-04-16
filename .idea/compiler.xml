@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="tstJunit4" />
         <module name="frotaflex-teste" />
+        <module name="frotaflex-teste2" />
       </profile>
     </annotationProcessing>
   </component>
