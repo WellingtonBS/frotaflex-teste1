@@ -3,7 +3,8 @@ pipeline {
     stages {
         stage ('Build Backend') {
             steps {
-                bat 'mvn clean package -DskipTests=true'
+                //bat 'mvn clean package -DskipTests=true'
+                bat 'mvn test'
             }
         }
 
@@ -12,10 +13,17 @@ pipeline {
                                 dir('Funcional-test-Frota') {
                                     git credentialsId: 'github_login', url: 'https://github.com/WellingtonBS/frotaflex-teste1'
                                     bat 'mvn test'
-                                }
-                            }
-                        }
+                }
+            }
+        }
     }
+    /*post {
+        always {
+            junit allowEmptyResults: true, testResults: ''
+
+        }
+
+    }*/
 }
 
 
