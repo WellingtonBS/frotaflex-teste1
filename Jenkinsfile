@@ -7,29 +7,7 @@ pipeline {
             }
         }
 
-        stage ('Deploy Backend') {
-            steps {
-                deploy adapters: [tomcat9(credentialsId: 'TOMCAT', path: '', url: 'http://localhost:8095/')], contextPath: 'tasks-backend', war: 'target\\tasks-backend.war'
-            } 
-        }
-        stage ('API Test') {
-            steps {
-                dir('api-test') {
-                    //git credentialsId: 'github_login', url: 'https://github.com/WellingtonBS/tasks-api-test'
-                    git credentialsId: 'github_login', url: 'https://github.com/WellingtonBS/api-test-new'
-                    bat 'mvn test'
-                }
-            }
-        }
-        stage ('Deploy Frontend') {
-            steps {
-                dir('frontend') {
-                    git credentialsId: 'github_login', url: 'https://github.com/WellingtonBS/tasks-frontend'
-                    bat 'mvn clean package'
-                    deploy adapters: [tomcat9(credentialsId: 'TOMCAT', path: '', url: 'http://localhost:8095/')], contextPath: 'tasks', war: 'target\\tasks.war'
-                } 
-            }
-        }
+
         stage ('Funcional Test') {
             steps {
                 dir('Funcional-test') {
@@ -38,6 +16,15 @@ pipeline {
                 }
             }
         }
+
+        stage ('Funcional Test Frota') {
+                            steps {
+                                dir('Funcional-test-Frota') {
+                                    git credentialsId: 'github_login', url: 'https://github.com/WellingtonBS/frotaflex-teste1'
+                                    bat 'mvn test'
+                                }
+                            }
+                        }
     }
 }
 
