@@ -9,7 +9,7 @@ public class Propriedades {
 	/* Defini o formato de exeção
 	 * false = utiliza execução browser
 	 * true = utiliza execução selenium hub */
-	public static boolean seleniumHub = false;
+	public static boolean seleniumHub = true;
 
 	public static String url = "https://demo.frotaflex.com.br/";
 
