@@ -7,16 +7,6 @@ pipeline {
             }
         }
 
-
-        stage ('Funcional Test') {
-            steps {
-                dir('Funcional-test') {
-                    git credentialsId: 'github_login', url: 'https://github.com/WellingtonBS/task-funcional-test'
-                    bat 'mvn test'
-                }
-            }
-        }
-
         stage ('Funcional Test Frota') {
                             steps {
                                 dir('Funcional-test-Frota') {
