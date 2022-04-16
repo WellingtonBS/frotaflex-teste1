@@ -11,6 +11,8 @@ public class TestSelect {
 
     private static Connections connec;
     private String sql;
+/*
+
 
     @Test
     @Order(1)
@@ -29,6 +31,6 @@ public class TestSelect {
         connec.sqlScript("SELECT nom_pessoa FROM tab_pessoa WHERE cod_pessoa = 1");
 
     }
-
+ */
 
 }
