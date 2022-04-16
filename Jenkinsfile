@@ -1,7 +1,7 @@
 pipeline {
     agent any 
     stages {
-        tage ('Test Frota') {
+        stage ('Build Backend') {
             steps {
                 //bat 'mvn clean package -DskipTests=true'
                 bat 'mvn test'
@@ -17,13 +17,13 @@ pipeline {
             }
         }
     }
-    /*post {
+    post {
         always {
             junit allowEmptyResults: true, testResults: ''
 
         }
 
-    }*/
+    }
 }
 
 
