@@ -1,17 +1,16 @@
 pipeline {
     agent any 
     stages {
-        /*stage ('Build Backend') {
+        tage ('Test Frota') {
             steps {
                 //bat 'mvn clean package -DskipTests=true'
                 bat 'mvn test'
             }
-        }*/
+        }
 
         stage ('Funcional Test Frota') {
                             steps {
-                                //dir('Funcional-test-Frota') 
-                                {
+                                dir('Funcional-test-Frota') {
                                     git credentialsId: 'github_login', url: 'https://github.com/WellingtonBS/frotaflex-teste1'
                                     bat 'mvn test'
                 }
@@ -20,7 +19,7 @@ pipeline {
     }
     /*post {
         always {
-            junit allowEmptyResults: true, testResults: 'target/surefire-reports/*.xml'
+            junit allowEmptyResults: true, testResults: ''
 
         }
 
