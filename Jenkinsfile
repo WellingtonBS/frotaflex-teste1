@@ -15,7 +15,7 @@ pipeline {
         unsuccessful {
             emailext attachLog: true, body: 'See the attached log below', subject: 'Build Frota-Teste', to: 'wellington_frh+jenkins@hotmail.com'
         }
-        fixes {
+        fixed {
             emailext attachLog: true, body: 'See the attached log below', subject: 'Build final Frota-Teste', to: 'wellington_frh+jenkins@hotmail.com'
         }
     }
