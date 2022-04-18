@@ -13,10 +13,10 @@ pipeline {
             junit allowEmptyResults: true, testResults: 'target/surefire-reports/*.xml'
         }
         unsuccessful {
-            emailext attachLog: true, body: 'See the attached log below', subject: 'Build Frota-Teste', to: 'wellington_frh+jenkins@hotmail.com'
+            emailext attachLog: true, body: 'See the attached log below', subject: 'Build Frota-Teste', to: 'wellington_frh@hotmail.com'
         }
         fixed {
-            emailext attachLog: true, body: 'See the attached log below', subject: 'Build final Frota-Teste', to: 'wellington_frh+jenkins@hotmail.com'
+            emailext attachLog: true, body: 'See the attached log below', subject: 'Build final Frota-Teste', to: 'wellington_frh@hotmail.com'
         }
     }
 }
